@@ -1,0 +1,130 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+#elevatorExterior, #elevatorInterior {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+  #elevatorBg {
+    --s: 60px; /* control the size*/
+    --c1: white;
+    --c2: #77CDFF;
+
+     
+    height: 100%;
+    width: 100%;
+    
+    --_g: #0000 83%,var(--c1) 85% 99%,#0000 101%;
+    background:
+      radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
+      radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
+      radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
+      radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+      var(--c2);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+
+  #elevator {
+    height: 60%;
+    width: 30%;
+    background-color: #0D92F4;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #ground {
+    height: 100px;
+    width: 100%;
+    background-color: #FFECDB; 
+  }
+
+  #ground-inside-elevator {
+    width: 90%;
+    height: 20px;
+    background-color: #FFECDB;
+  }
+
+  #elevator-box {
+    width: 90%;
+    height: 90%;
+    border-radius: 4px;
+    background-color: #C62E2E;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+#trapezoid-up {
+    width: calc(100% - 50px); /* Subtract left + right border widths */
+    height: 0;
+    border-bottom: 50px solid #F95454;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    transform: rotate(180deg);
+}
+
+#wall-rectangle {
+    height: 100%;
+    width: calc(100% - 50px);
+    background-color: #A82828;
+}
+
+#trapezoid-down {
+    width: calc(100% - 50px); /* Subtract left + right border widths */
+    height: 0;
+    border-bottom: 50px solid #F95454;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+
+#elevator-website-name {
+    background-color: #FFECDB;
+    height: 40px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C62E2E;
+    font-family: "Old Standard TT", serif;
+    font-size: 20px;
+}
