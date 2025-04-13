@@ -92,6 +92,7 @@ button {
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
+    position: relative;
 }
 
 #trapezoid-up {
@@ -127,4 +128,23 @@ button {
     color: #C62E2E;
     font-family: "Old Standard TT", serif;
     font-size: 20px;
+}
+
+@keyframes doorAnimation {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+#left-door {
+  transform-origin: left;
+  animation: doorAnimation 5s forwards;
+}
+
+#right-door {
+  transform-origin: right;
+  animation: doorAnimation 5s forwards;
 }
