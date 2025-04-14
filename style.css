@@ -1,10 +1,11 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: sans-serif;
   background-color: #f0f0f0;
-  font-family: "Old Standard TT", serif;  
+  font-family: "Old Standard TT", serif;
 }
 
 .screen {
@@ -20,7 +21,7 @@ body, html {
   display: none;
 }
 
-#elevatorExterior, #elevatorInterior {
+#elevatorExterior {
   width: 100%;
   height: 100%;
   display: flex;
@@ -36,117 +37,114 @@ button {
   cursor: pointer;
 }
 
+#elevatorBg {
+  --s: 60px; /* control the size*/
+  --c1: white;
+  --c2: #77cdff;
 
-  #elevatorBg {
-    --s: 60px; /* control the size*/
-    --c1: white;
-    --c2: #77CDFF;
+  height: 100%;
+  width: 100%;
 
-     
-    height: 100%;
-    width: 100%;
-    
-    --_g: #0000 83%,var(--c1) 85% 99%,#0000 101%;
-    background:
-      radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
-      radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
-      radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
-      radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+  --_g: #0000 83%, var(--c1) 85% 99%, #0000 101%;
+  background: radial-gradient(27% 29% at right, var(--_g)) calc(var(--s) / 2)
+      var(--s),
+    radial-gradient(27% 29% at left, var(--_g)) calc(var(--s) / -2) var(--s),
+    radial-gradient(29% 27% at top, var(--_g)) 0 calc(var(--s) / 2),
+    radial-gradient(29% 27% at bottom, var(--_g)) 0 calc(var(--s) / -2)
       var(--c2);
-    background-size: calc(2*var(--s)) calc(2*var(--s));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  }
+  background-size: calc(2 * var(--s)) calc(2 * var(--s));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+#elevator {
+  height: 60%;
+  width: 30%;
+  background-color: #0d92f4;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-  #elevator {
-    height: 60%;
-    width: 30%;
-    background-color: #0D92F4;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  }
+#ground {
+  height: 100px;
+  width: 100%;
+  background-color: #ffecdb;
+}
 
-  #ground {
-    height: 100px;
-    width: 100%;
-    background-color: #FFECDB; 
-  }
+#ground-inside-elevator {
+  width: 90%;
+  height: 20px;
+  background-color: #ffecdb;
+}
 
-  #ground-inside-elevator {
-    width: 90%;
-    height: 20px;
-    background-color: #FFECDB;
-  }
-
-  #elevator-box {
-    width: 90%;
-    height: 90%;
-    border-radius: 4px;
-    background-color: #C62E2E;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
-    position: relative;
+#elevator-box {
+  width: 90%;
+  height: 90%;
+  border-radius: 4px;
+  background-color: #c62e2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  position: relative;
 }
 
 #trapezoid-up {
-    width: calc(100% - 50px); /* Subtract left + right border widths */
-    height: 0;
-    border-bottom: 50px solid #F95454;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    transform: rotate(180deg);
+  width: calc(100% - 50px); /* Subtract left + right border widths */
+  height: 0;
+  border-bottom: 50px solid #f95454;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  transform: rotate(180deg);
 }
 
 #wall-rectangle {
-    height: 100%;
-    width: calc(100% - 50px);
-    background-color: #A82828;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: calc(100% - 50px);
+  background-color: #a82828;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    span {
-      color: white;
-      cursor: pointer;
+  span {
+    color: white;
+    cursor: pointer;
 
-      &:hover {
-        text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
-      }
+    &:hover {
+      text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
     }
+  }
 }
 
 #trapezoid-down {
-    width: calc(100% - 50px); /* Subtract left + right border widths */
-    height: 0;
-    border-bottom: 50px solid #F95454;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
+  width: calc(100% - 50px); /* Subtract left + right border widths */
+  height: 0;
+  border-bottom: 50px solid #f95454;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
 }
 
 #elevator-website-name {
-    background-color: #FFECDB;
-    height: 40px;
-    width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #C62E2E;
-    font-size: 20px;
-    cursor: pointer;
-    
-    &:hover {
-      transform: rotate(5deg);
-      transition: transform 0.3s ease-in-out;
-      background-color: #ffe4cc;
-    }
+  background-color: #ffecdb;
+  height: 40px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c62e2e;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(5deg);
+    transition: transform 0.3s ease-in-out;
+    background-color: #ffe4cc;
+  }
 }
 
 @keyframes doorAnimation {
@@ -160,17 +158,17 @@ button {
 
 #left-door {
   transform-origin: left;
-  border-right: 1px solid #0D92F4;
+  border-right: 1px solid #0d92f4;
 }
 
 #right-door {
   transform-origin: right;
-  border-left: 1px solid #0D92F4;
+  border-left: 1px solid #0d92f4;
 }
 
 .door {
-  flex: 1; 
-  background-color: #77CDFF
+  flex: 1;
+  background-color: #77cdff;
 }
 
 .door.animate {
@@ -178,30 +176,27 @@ button {
 }
 
 #door-wrapper {
-  position: absolute; 
-  width: 100%; 
-  height: 100%; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
 }
 
 #elevatorInterior {
-  background-color: #C62E2E;
+  background-color: #c62e2e;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.scroll-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+#workExperiencePage {
+  background-color: #77cdff;
 }
 
-.scroll-container .screen {
-  scroll-snap-align: start;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-}
-
-#punchline-group {
-  margin-top: 200px;
+#projectsPage {
+  background-color: #0d92f4;
+  color: white;
 }

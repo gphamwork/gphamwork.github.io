@@ -55,10 +55,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log(`You are on: ${entry.target.id}`);
-
         if (entry.target.id !== "screen1") {
-          console.log("get in here..")
           for (i = 2; i < 6; i++) {
             const e = document.getElementById("screen" + i);
             e.classList.remove("hidden");
@@ -72,4 +69,56 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".screen").forEach((screen) => {
   observer.observe(screen);
+});
+
+const musicSymbol = document.getElementById("music-symbol");
+musicSymbol.addEventListener("click", () => {
+  if (jazzLounge.paused) {
+    jazzLounge.play();
+    musicSymbol.style.color = "white";
+  } else {
+    jazzLounge.pause();
+    musicSymbol.style.color = "#E3DAD5";
+  }
+});
+
+const scrollPage2To3Btn = document.getElementById("scroll-page-2-to-3");
+const screen3 = document.getElementById("screen3");
+
+scrollPage2To3Btn.addEventListener("click", () => {
+  const targetY = screen3.offsetTop;
+
+  anime({
+    targets: [document.documentElement, document.body],
+    scrollTop: targetY,
+    duration: 1000,
+    easing: "easeInOutQuad",
+  });
+});
+
+const scrollPage3To4Btn = document.getElementById("scroll-page-3-to-4");
+const screen4 = document.getElementById("screen4");
+
+scrollPage3To4Btn.addEventListener("click", () => {
+  const targetY = screen4.offsetTop;
+
+  anime({
+    targets: [document.documentElement, document.body],
+    scrollTop: targetY,
+    duration: 1000,
+    easing: "easeInOutQuad",
+  });
+});
+
+const scrollPage4To5Btn = document.getElementById("scroll-page-4-to-5");
+
+scrollPage4To5Btn.addEventListener("click", () => {
+  const targetY = screen5.offsetTop;
+
+  anime({
+    targets: [document.documentElement, document.body],
+    scrollTop: targetY,
+    duration: 1000,
+    easing: "easeInOutQuad",
+  });
 });
