@@ -4,6 +4,7 @@ body, html {
   height: 100%;
   font-family: sans-serif;
   background-color: #f0f0f0;
+  font-family: "Old Standard TT", serif;  
 }
 
 .screen {
@@ -108,6 +109,18 @@ button {
     height: 100%;
     width: calc(100% - 50px);
     background-color: #A82828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
+      }
+    }
 }
 
 #trapezoid-down {
@@ -126,8 +139,14 @@ button {
     justify-content: center;
     align-items: center;
     color: #C62E2E;
-    font-family: "Old Standard TT", serif;
     font-size: 20px;
+    cursor: pointer;
+    
+    &:hover {
+      transform: rotate(5deg);
+      transition: transform 0.3s ease-in-out;
+      background-color: #ffe4cc;
+    }
 }
 
 @keyframes doorAnimation {
@@ -141,10 +160,48 @@ button {
 
 #left-door {
   transform-origin: left;
-  animation: doorAnimation 5s forwards;
+  border-right: 1px solid #0D92F4;
 }
 
 #right-door {
   transform-origin: right;
-  animation: doorAnimation 5s forwards;
+  border-left: 1px solid #0D92F4;
+}
+
+.door {
+  flex: 1; 
+  background-color: #77CDFF
+}
+
+.door.animate {
+  animation: doorAnimation 3s forwards;
+}
+
+#door-wrapper {
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  display: flex;
+}
+
+#elevatorInterior {
+  background-color: #C62E2E;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-container .screen {
+  scroll-snap-align: start;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#punchline-group {
+  margin-top: 200px;
 }
